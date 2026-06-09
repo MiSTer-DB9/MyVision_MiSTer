@@ -294,7 +294,7 @@ wire [127:0] status;
 wire  [10:0] ps2_key;
 // [MiSTer-DB9 BEGIN] - DB9/SNAC8 support: USB-side joystick + joydb mux
 wire  [31:0] joy_USB;
-wire  [31:0] joy = joydb_1ena ? (OSD_STATUS ? 32'b0 : joydb_1) : joy_USB;
+wire  [31:0] joy = joydb_1ena ? (OSD_STATUS ? 32'b0 : joydb_1_mapped[15:0]) : joy_USB;
 // [MiSTer-DB9 END]
 wire         ioctl_download;
 wire   [7:0] ioctl_index;
